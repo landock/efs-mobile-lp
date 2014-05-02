@@ -1,0 +1,53 @@
+@import "compass/css3";
+
+$lt-grey: #ccc;
+$drk-grey: #333;
+
+@import "compass/utilities/sprites";
+@import "../images/*.png";
+@include all-images-sprites;
+
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: $drk-grey;
+    padding-top:30px;
+}
+
+.search-content *{
+    background-color:#eae8e2;
+}
+
+.search-button {
+    border:1px solid $drk-grey;
+    float:left; 
+    width:100%;
+    border-radius: 5px;
+    margin:10px 0;
+}
+
+.learn-more{
+    border-top:1px solid $lt-grey;
+}
+
+.wf-accordion{
+    border: 1px solid $lt-grey;
+    @include border-radius(10px);
+
+    .panel{ 
+        margin:0;
+        padding:0 10px;
+        border-radius:0;
+        border:none;
+        background-color:transparent;
+    }
+
+    .panel-default .panel-heading{
+        background-color:transparent;
+    }
+}
+
+#accordion .panel{
+    border-top:1px solid $drk-grey;
+}
+
