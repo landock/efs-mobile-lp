@@ -33,29 +33,26 @@
 <link rel="stylesheet" href="styles/vendor/bootstrap/bootstrap.css">
 <!-- endbuild -->
 </head>
-<body>
+<body class="wf">
 
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <a class="navbar-brand" href="#">Project name</a>
-    </div>
+<div class="container wf-logo">
+    <a class="navbar-brand text-hide" href="#">Wells Fargo</a>
+</div>
+
+<div class="container mast">
+    <span class="text-hide">Act now to get a student loan</span>
 </div>
 <div class="container">
-    <div class="row">
-        <div class="mast col-xs-12 col-sm-12">
-            <img class="img-responsive" src="images/mast.jpg">
-        </div>
-    </div>
-    <div class="swap">
+    <div class="loan-start">
         <div class="row">
             <div class="search-content col-xs-12 col-sm-12">
                 <div class="search-content col-xs-12 col-sm-12">
                     <h1>Undergraduate Private School Loans</h1>
-                    <p> Williamsburg craft beer Portland, shabby chic butcher typewriter pariatur 90's Brooklyn authentic letterpress. Slow-carb master cleanse locavore aute retro, nulla food truck. Shabby chic placeat veniam, forage slow-carb tattooed gluten-free occaecat sartorial. Tempor Echo Park aliqua eu cillum. PBR hoodie XOXO ullamco Godard, Tonx Bushwick tempor in synth photo booth chambray. Mustache dolore Echo Park, biodiesel minim quinoa hella fap Truffaut Godard ex pariatur. Ethnic normcore Tumblr, nulla Carles sriracha pork belly kitsch commodo you probably haven't heard of them small batch ethical. </p>
+                    <p>A Wells Fargo Collegiate® loan can be a private student loan option for undergraduates.<sup>1</sup> </p>
                     <ul>
-                        <li>Butcher street art keytar, kitsch drinking vinegar fanny pack occupy photo booth. Twee PBR Carles forage sustainable next level, Intelligentsia wayfarers.</li>
-                        <li>Gastropub Godard banh mi, artisan occupy Portland before they sold out yr kogi XOXO. Plaid hella Intelligentsia lo-fi Marfa salvia. </li>
-                        <li>XOXO Shoreditch chia High Life mixtape, lo-fi kogi you probably haven't heard of them. Keytar quinoa twee cliche bicycle rights. Tofu cardigan Tonx Blue Bottle scenester, +1 deep v polaroid viral Truffaut.</li>
+                        <li>Make no payments while in school<sup>2</sup> </li>
+                        <li>Applying with a cosigner may help you qualify and potentially get a lower rate </li>
+                        <li>Borrow up to the cost of your education (minus other financial aid)<sup>1, 3</sup></li>
                     </ul>
                 </div>
             </div>
@@ -67,11 +64,13 @@
                         <p>Selct your school to get started</p>
                     </div>
                     <div class="col-xs-5 col-sm-5">
-                        <button class="btn btn-default">Search Now</button>
+                        <button class="btn btn-wells btn-sm" data-on=".find-school" data-off=".loan-start" >Search Now</button>
+
                     </div>
                     <div class="learn-more col-xs-12 col-sm-12 ">
                         <p><a href="http://www.wellsfargo.com/student">Learn More about the Wells Fargo Collegiate&reg; loan.</a></p>
-                </div></div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -81,7 +80,7 @@
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a id="collapseZero" data-toggle="collapse" data-target="#accordion" href="#collapseZero">
-                                    Collapsible Group Item #0
+                                    See other private student loans<span class="arrow-right"></span>
                                 </a>
                             </h4>
                         </div>
@@ -92,13 +91,24 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                        Collapsible Group Item #1
+                                        Graduate Students<span class="arrow-right"></span>
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapseOne" class="panel-collapse collapse in">
                                 <div class="panel-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                    <p>For students financing MBA, law, or other graduate degrees.1 Most students can qualify without a cosigner. And no payments are required while you’re in school.2</p> 
+
+                                    <p>Give us a call at <a href="tel://1-877-399-0426">1-877-399-0426</a> to get started.</p>
+
+
+                                    <button class="btn btn-wells" href="tel://1-877-399-0426" >Call Now</button>
+                                    or <a>Get started online*</a>
+
+                                <p class="caption">    *Online content is best viewed on a desktop or laptop.</p>
+
+                                <p>    Learn more about the Wells Fargo GraduateSM loan.</p>
+
                                 </div>
                             </div>
                         </div>
@@ -106,13 +116,23 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                                        Collapsible Group Item #2
+                                        Medical Students<span class="arrow-right"></span>
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapseTwo" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                <p>For students in graduate medical, dental, and other health-related programs.1 Most students can qualify without a cosigner. And no payments are required while you’re in school.2</p> 
+
+                                <p>Give us a call at  <a href="tel://1-877-399-0426">1-877-399-0426</a> to get started.</p>
+
+<button class="btn btn-wells" href="tel://1-877-399-0426" >Call Now</button>
+                                or <a>Get started online*</a>
+
+                                <p class="caption">*Online content is best viewed on a desktop or laptop.</p>
+
+                                <p>Learn more about the Wells Fargo MedCAP® loan.</p>
+
                                 </div>
                             </div>
                         </div>
@@ -120,13 +140,47 @@
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                                        Collapsible Group Item #3
+                                        Parents <span class="arrow-right"></span>
                                     </a>
                                 </h4>
                             </div>
                             <div id="collapseThree" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                <p>For parents, family members, or friends to help students cover education-related expenses.1 Choose immediate repayment or interest-only payments for up to 48 months.2</p> 
+
+                                <p>Give us a call at <a href="tel://1-877-399-0426">1-877-399-0426</a> to get started.</p>
+
+<button class="btn btn-wells" href="tel://1-877-399-0426" >Call Now</button> 
+                                or <a>Get started online*</a>
+
+                                <p>*Online content is best viewed on a desktop or laptop.</p>
+
+                                <p>Learn more about the Wells Fargo Student Loan for Parents.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                                        Consolidate Private Student Loans<span class="arrow-right"></span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p>Simplify your monthly payments into one private student loan, or refinance a single private student loan.1 Select from a competitive fixed or variable interest rate option.</p> 
+                                    <p>Give us a call at <a href="tel://1-877-399-0426">1-877-399-0426</a> to get started.</p>
+
+<p><button class="btn btn-wells" href="tel://1-877-399-0426" >Call Now</button> or <a>Get started online*</a></p>
+
+                                    <p>*Online content is best viewed on a desktop or laptop.</p>
+
+                                    <p>Learn more about the Wells Fargo Private ConsolidationSM loan.</p> 
+
+                                    <p>For more information, go to the Wells Fargo student loan site (<a href="http://www.wellsfargo.com/student">www.wellsfargo.com/student</a>)..</p>
+
                                 </div>
                             </div>
                         </div>
@@ -135,33 +189,75 @@
             </div>
         </div>
     </div>
-    <div class="push container">
+    <div class="find-school hide">
         <div class="row">
             <div class="col-xs-12 col-sm-12">
-                <button class="btn btn-link">< Go back</button>
+                <button class="btn btn-link" data-off=".find-school" data-on=".loan-start">< Go back</button>
                 <h3>Find your school to get started</h3>
                 <p>1. Select the state your school is located in</p>
-                <select class="form-control">
+                <select class="state-pick form-control">
                     <option>Select a State</option >
+                    <option value="california">California</option >
                 </select>
                 <p>2. Select your school's name from the list below, and then tap <strong>Next</strong>.</p>
-                <select multiple class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                <select multiple class="form-control school-pick">
                 </select>
+                <div class="row filter">
+                    <div class="col-xs-8 col-sm-8">
+                        <ul>
+                            <li>All</li>
+                            <li>A-H</li>
+                            <li>I-P</li>
+                            <li>Q-Z</li>
+                        </ul>
+                        <button class="btn btn-link" data-on=".unlisted" data-off=".find-school" >My school is not listed</button>
+                        </div>
+                    <div class="col-xs-4 col-sm-4">
+                    <button data-on=".listed" data-off=".find-school" class="next pull-right btn btn-wells btn-sm ">Next</button>
+                        </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="row">
+
+    <div class="listed hide">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <button class="btn btn-link" data-on=".find-school" data-off=".listed">< Go back</button>
+                <h3>Undergraduate Private Student Loans</h3>
+                <p>You may qualify for a Wells Fargo private student loan.<sup>1</sup> Give us a call at at 1-877-399-0426 to speak to a Student Loan Consultant today.</p>
+            </div>
+        </div>
+            <div class="center-block call-now">
+                <button class="btn btn-wells" href="tel://1-877-399-0426" >Call Now</button> 
+            </div>
+            <div class="center-block get-started">
+                <a href="">Get Started Online*</a>
+                </div>
+    </div>
+    <div class="unlisted hide">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <button class="btn btn-link" data-on=".find-school" data-off=".unlisted">< Go back</button>
+                <h3>Your school is not listed</h3>
+                <p>Thank you for considering Wells Fargo. Please contact your school’s financial aid office to explore other funding options. </p>
+            </div>
+        </div>
+    </div>
+    <div class="row footer">
         <div class="col-xs-12 col-sm-12">
-            <p>For more information, go to the Wells Fargo student loan site (<a href="http://www.wellsfargo.com/student">www.wellsfargo.com/student).</a></p>
-            <button class="btn btn-default btn-block" data-toggle="collapse" data-target="#lawstuff"> See other private studen loans <span class="glyphicon glyphicon-expand"></span></button>
+            <p class="more-info">For more information, go to the Wells Fargo student loan site (<a href="http://www.wellsfargo.com/student">www.wellsfargo.com/student.</a>)</p>
+            <button class="btn btn-link btn-block more-legal" data-toggle="collapse" data-target="#lawstuff"><span class="caret"></span>Important Information and Footnotes</button>
             <div id="lawstuff" class="collapse">
                 <div class="">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    <p><sup>1</sup> Wells Fargo private student loans are subject to credit qualification, completion of a loan application/consumer credit agreement, verification of application information, and if applicable, self-certification form, school certification of loan amount, and student’s enrollment at a Wells Fargo-participating school.</p>
+                    <p><sup>2</sup> For Collegiate, the Wells Fargo Student Loan for Career and Community Colleges, Graduate, and Bar ExamSM loans, repayment begins six months after you graduate or leave school. For the Wells Fargo Student Loan for Parents and the Wells Fargo Private ConsolidationSM loan repayment begins after funds are disbursed. Maximum in-school periods apply and vary by loan product. Interest continues to accrue during any deferment periods and is capitalized to the account upon entering repayment.</p>
+                    <p>For the MedCAP and MedCAP-XTRA® loans, repayment begins up to 60 months after student leaves school for allopathic and osteopathic medical students; 6 months after leaving school for students in other eligible disciplines. Allopathic and osteopathic medical students have a grace period of 36 months designed for residency completion that may be followed by up to 24 months of internship/residency forbearance, for a total deferment period of up to 60 months after graduation. All other students begin repayment six months after leaving school, or five to seven years after the first disbursement date (depending on discipline), whichever comes first. Interest continues to accrue during any deferment periods and is capitalized to the account upon entering repayment.</p>
+                    <p>For the Wells Fargo Student Loan for Parents, the interest-only payment feature allows you to make minimum interest payments for up to 48 months during the loan term as long as the student beneficiary is enrolled in school at least half time. Interest-only periods do not need to be consecutive. After each interest-only period full principal and interest payments will resume, which could possibly increase the amount of your monthly payment substantially, even if you have a fixed interest rate. Consider making more than the minimum payment during the interest-only period to begin reducing principal.</p>
+                    <p><sup>3</sup> Loan amount is dependent on the loan product, other financial aid, creditworthiness, and other factors. Aggregate loan limits apply. Annual loan limits for temporary resident aliens apply and are based on product. The cost of attendance is determined and certified by the educational institution.</p> 
+
+                    <p>Wells Fargo reserves the right to modify or discontinue interest rate discount program(s) for future loans or to discontinue loan programs at any time without notice. For details, including eligibility requirements, visit us at wellsfargo.com/student or call <a href="tel://1-800-378-5526">1-800-378-5526</a>.</p>
+
                 </div>
             </div>
             <p>Deposit products offered by Wells Fargo Bank, N.A. Member FDIC</p>
