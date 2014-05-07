@@ -2,6 +2,8 @@
   //$('.swap').toggleClass('transitions');
   //$('.push').toggleClass('transitionsTwo');
 /*});*/
+//Polyfill for filter
+if(!Array.prototype.filter){Array.prototype.filter=function(e){"use strict";if(this===void 0||this===null)throw new TypeError;var t=Object(this);var n=t.length>>>0;if(typeof e!=="function")throw new TypeError;var r=[];var i=arguments.length>=2?arguments[1]:void 0;for(var s=0;s<n;s++){if(s in t){var o=t[s];if(e.call(i,o,s,t))r.push(o)}}return r}}
 var schools = {
     california: [
         {
@@ -62,17 +64,19 @@ $('.state-pick').on('change', function(e) {
     var aToH = '',
         iToP = '',
         qToZ = '',
-        all  = '';
+        all  = '',
+        ahReg = /^[A-H]+/g,
+        ipReg = /^[I-P]+/g,
+        qzReg = /^[Q-Z]+/g;
 
     if(schools[this.value].length){
         $('.filter').show();
-
 
         $.each(schools[this.value], function(i, v) {
 
             all += '<option>' + this.name + '</option>';
 
-            if (this.name < 'L') {
+            if (ahReg.test(this.name)) {
                 aToH += '<option>' + this.name + '</option>';
                 console.log('a to h: ' + aToH);
             }
