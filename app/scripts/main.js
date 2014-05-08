@@ -67,7 +67,7 @@ var filteredSchools = null;
 $('.state-pick').on('change', function(e) {
     filterVal = this.value;
     $.ajax({
-        url: "scripts/states.json",
+        url: "scripts/states.js",
         type: "GET",
         dataType: "json"
     })
