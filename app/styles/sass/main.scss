@@ -36,7 +36,9 @@ body {
         font-weight:bold;
     }
 }
-
+.normal {
+    font-size:normal;
+}
 button.btn-wells, a.btn-wells{
     background-color: #ce4c00; // Old browsers
     @include filter-gradient(#ce4c00, #a53e01, vertical); // IE6-9
@@ -154,17 +156,17 @@ button.btn-wells, a.btn-wells{
         position:relative;
     }
 
-.arrow-down {
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid #666;
-}
+    .arrow-down {
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid #666;
+    }
 
-.arrow-right {
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 5px solid #666;
-}
+    .arrow-right {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid #666;
+    }
 }
 
 
