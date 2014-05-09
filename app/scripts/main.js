@@ -7,14 +7,25 @@ $('.btn-wells').on('click', function(e) {
 $('.btn-link').on('click', function(e) {
     contract(e);
 });
-
+$(function() {
+    $('body').on('animationend webkitAnimationEnd', function() {
+        window.scrollTo(0, 0);
+    });
+});
 $('.wf-accordion').on('hide.bs.collapse show.bs.collapse', function(e) {
     var type = e.type,
     targetLength = e.target.childNodes.length,
     $span = targetLength > 3 ? $('#collapseZero span') : $(e.target).parent().find('a span');
-type === 'hide' ? $span.removeClass().addClass('arrow-right') : $span.removeClass().addClass('arrow-down');
+    type === 'hide' ? $span.removeClass().addClass('arrow-right') : $span.removeClass().addClass('arrow-down');
 });
 
+$('#collapseZero').click(function() {
+    window.scrollTo(0,document.body.scrollHeight);
+});
+
+$('.more-legal').click(function() {
+    $(this).find('span').toggleClass('arrow-down').toggleClass('arrow-right');
+});
 
 function expand(e) {
     var hidePanel  = $(e.target).attr('data-off'),
@@ -43,6 +54,7 @@ function stateFilter(statesArray, state) {
         return 0;
     })
 }
+
 function getSchools(states) {
     var filteredValues = ['','',''],
         a_h = /^[A-H]+/g,

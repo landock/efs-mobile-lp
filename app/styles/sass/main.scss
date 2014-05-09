@@ -2,22 +2,23 @@
 
 $lt-grey: #ccc;
 $drk-grey: #333;
+$off-white: #fafafa;
 
 @import "compass/utilities/sprites";
 @import "../images/*.png";
 @include all-images-sprites;
 
 body {
-    background-color: #fafafa;
-
-    background-color: #ffffff; // Old browsers
-    @include filter-gradient(#ffffff, #ededed, vertical); // IE6-9
-    @include background-image( url(../images/stage-coach.png), linear-gradient(top,  #ffffff 35%,#f2f2f2 100%) );
+    background-color:$off-white ;
+    @include filter-gradient($off-white, #ededed, vertical); // IE6-9
+    @include background-image( url(../images/stage-coach.png), linear-gradient(top,  $off-white 35%,#f2f2f2 100%) );
     background-position:bottom 10px center, bottom left;
     background-repeat: no-repeat, no-repeat;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: $drk-grey;
-    padding-bottom:60px;
+    padding-bottom:70px;
+    padding-top:130px;
+    min-height:568px
 }
 
 .wf .container {
@@ -98,10 +99,16 @@ button.btn-wells, a.btn-wells{
             &:hover {
                 text-decoration:none;
             }
+
+            &:focus {
+                outline:none;
+            }
         }
     }
 }
-
+#lawstuff {
+    font-size:90%;
+}
 #accordion .panel{
     border-top:1px solid $lt-grey;
 }
@@ -115,6 +122,12 @@ button.btn-wells, a.btn-wells{
     background: url(../images/wf-logo.svg)center center no-repeat, -ms-linear-gradient(top,  #ec1f2c 43%,#ae1f25 99%); /* IE10+ */
     background: url(../images/wf-logo.svg)center center no-repeat, linear-gradient(to bottom,  #ec1f2c 43%,#ae1f25 99%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec1f2c', endColorstr='#ae1f25',GradientType=0 ); /* IE6-9 */
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:99;
+
 }
 
 .mast {
@@ -124,12 +137,34 @@ button.btn-wells, a.btn-wells{
     height:78px;
     max-height:78px;
     background: url(../images/mast.jpg)bottom left / 100% auto no-repeat;
+    position:fixed;
+    top:50px;
+    left:0;
+    width:100%;
+    z-index:99;
 }
 .wf .more-legal{
     text-align:left;
     &:focus, &:active:focus{
         outline:none;
     }
+
+    .arrow-right, .arrow-down{
+        margin-right: 5px;
+        position:relative;
+    }
+
+.arrow-down {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #666;
+}
+
+.arrow-right {
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #666;
+}
 }
 
 
@@ -159,6 +194,7 @@ button.btn-wells, a.btn-wells{
 .wf h3 {
     font-size:110%;
     font-weight:bold;
+    margin-top:0;
 }
 .listed {
     display:none;
@@ -168,6 +204,7 @@ button.btn-wells, a.btn-wells{
     }
     .get-started {
         margin-bottom:20px;
+        padding-top:10px;
     }
 }
 
