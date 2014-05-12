@@ -17,7 +17,7 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: $drk-grey;
     padding-bottom:70px;
-    padding-top:130px;
+    padding-top:140px;
     min-height:568px
 }
 
@@ -78,6 +78,7 @@ button.btn-wells, a.btn-wells{
         border-radius:0;
         border:none;
         background-color:transparent;
+        @include background-image(  linear-gradient(#fff, #eee) );
     }
     .panel-body{
         padding-top:0px;
@@ -115,15 +116,13 @@ button.btn-wells, a.btn-wells{
     border-top:1px solid $lt-grey;
 }
 .wf-logo{
-    text-align:center;
     background: #ec1f2c; /* Old browsers */
-    background: url(../images/wf-logo.svg)center center no-repeat, -moz-linear-gradient(top,  #ec1f2c 43%, #ae1f25 99%); /* FF3.6+ */
-    background: url(./images/wf-logo.svg)center center no-repeat, -webkit-gradient(linear, left top, left bottom, color-stop(43%,#ec1f2c), color-stop(99%,#ae1f25)); /* Chrome,Safari4+ */
-    background: url(../images/wf-logo.svg)center center no-repeat, -webkit-linear-gradient(top,  #ec1f2c 43%,#ae1f25 99%); /* Chrome10+,Safari5.1+ */
-    background: url(../images/wf-logo.svg)center center no-repeat, -o-linear-gradient(top,  #ec1f2c 43%,#ae1f25 99%); /* Opera 11.10+ */
-    background: url(../images/wf-logo.svg)center center no-repeat, -ms-linear-gradient(top,  #ec1f2c 43%,#ae1f25 99%); /* IE10+ */
-    background: url(../images/wf-logo.svg)center center no-repeat, linear-gradient(to bottom,  #ec1f2c 43%,#ae1f25 99%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec1f2c', endColorstr='#ae1f25',GradientType=0 ); /* IE6-9 */
+    @include filter-gradient(#ec1f2c, #ae1f25, vertical); // IE6-9
+    @include background-image( url(../images/wf-logo.svg), linear-gradient(top,  #ec1f2c 43%,#ae1f25 99%) );
+    background-position: center top 60%, bottom left;
+    background-size: auto 35%, 100% auto;
+    background-repeat: no-repeat, no-repeat;
+    text-align:center;
     position:fixed;
     top:0;
     left:0;
@@ -133,17 +132,35 @@ button.btn-wells, a.btn-wells{
 }
 
 .mast {
-    border-top:4px solid #fff;
-    border-bottom:4px solid #00698e;
+    border-top:5px solid #fff;
+    border-bottom:5px solid #00698e;
     margin-bottom:10px;
-    height:78px;
-    max-height:78px;
-    background: url(../images/mast.jpg)bottom left / 100% auto no-repeat;
+    height:80px;
+    max-height:80px;
+    background: url(../images/mast2.jpg)top right/ cover no-repeat;
     position:fixed;
     top:50px;
     left:0;
     width:100%;
     z-index:99;
+    font-family: 'Archer A', 'Archer B'; 
+    font-weight: 800; 
+    font-style: normal;
+    font-size:140%;
+    .headline {
+        color:#00698c;
+        padding:5px 5px 10px 15px;
+        background-color:rgba(255,255,255,.9);
+        width:50%;
+        line-height:1.1;
+        margin-top:8px
+    }
+}
+
+.btn-back {
+    font-family: 'Archer A', 'Archer B'; 
+    font-weight: 600; 
+    font-style: italic;
 }
 .wf .more-legal{
     text-align:left;
@@ -190,6 +207,16 @@ button.btn-wells, a.btn-wells{
     border-bottom: 7px solid transparent;
     border-left: 7px solid #666;
 }
+
+#collapseZero .arrow-right, #collapseZero .arrow-down {
+    border:none;
+}
+#collapseZero .arrow-right:before {
+    content:url(../images/contract.png);
+}
+#collapseZero .arrow-right:before {
+    content:url(../images/expand.png);
+}
 .state-pick {
     margin-bottom:10px;
 }
@@ -209,6 +236,8 @@ button.btn-wells, a.btn-wells{
         padding-top:10px;
     }
 }
+
+
 
 .more-info{
     font-size:95%
