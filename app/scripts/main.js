@@ -97,7 +97,8 @@ WF.EFS = (function() {
             $('.wf-accordion').on('shown.bs.collapse', function(e) {
                 var initY = $(e.target).offset().top
                     //168 reprepresents the offset from padding at the top of the page and the element
-                  , adjustedY = initY - 168;
+                  , adjustedY = initY - 168
+                  ;
                 window.scrollTo (0, adjustedY);
             });
 
