@@ -24,3 +24,4 @@ test/.bowerrc
 test/bower.json
 test/index.html
 test/spec/test.js
+states.js
