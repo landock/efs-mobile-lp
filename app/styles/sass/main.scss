@@ -40,6 +40,9 @@ body {
 
 .wf .btn-link {
     padding-left:0;
+    &:focus  {
+        outline:none;
+    }
 }
 
 .search-content *{
@@ -85,6 +88,7 @@ button.btn-wells, a.btn-wells{
 .wf-accordion{
     border: 1px solid $lt-grey;
     @include border-radius(5px);
+    overflow:hidden;
 
     .panel{ 
         margin:0;
@@ -267,7 +271,6 @@ button.btn-wells, a.btn-wells{
 }
 
 .filter{
-    display:none;
     margin-top:10px;
 
     ul {
@@ -298,7 +301,16 @@ button.btn-wells, a.btn-wells{
 sup {
     padding-left: 3px;
 }
-
+div[aria-hidden], select[aria-hidden]{
+    display:none;
+}
+.visuallyhidden { 
+  position: absolute; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height: 1px; width: 1px; 
+  margin: -1px; padding: 0; border: 0; 
+}
 /* animation stuff */
 
 .hide{

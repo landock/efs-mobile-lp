@@ -12,15 +12,15 @@ WF.EFS = (function() {
     function expand(e) {
         var hidePanel  = $(e.target).attr('data-off')
           , showPanel = $(e.target).attr('data-on');
-        $(hidePanel).removeClass('expand contract').addClass('hide');
-        $(showPanel).removeClass('hide').addClass('expand');
+        $(hidePanel).removeClass('expand contract').attr('aria-hidden', 'true');
+        $(showPanel).removeAttr('aria-hidden').addClass('expand');
     }
 
     function contract(e) {
         var hidePanel  = $(e.target).attr('data-off')
           , showPanel = $(e.target).attr('data-on');
-        $(hidePanel).toggleClass('hide contract');
-        $(showPanel).toggleClass('hide contract');
+        $(hidePanel).removeClass('expand contract').attr('aria-hidden', 'true');
+        $(showPanel).removeAttr('aria-hidden').addClass('contract');
     }
 
     function stateFilter(statesArray, state) {
@@ -76,6 +76,8 @@ WF.EFS = (function() {
     return {
         init: function() {
 
+            allStates = allStates || getStates('scripts/states.js');
+
             //toggle slide transitions
             $('.btn-wells').on('click', function(e) {
                 expand(e);
@@ -87,18 +89,27 @@ WF.EFS = (function() {
 
             //Accordion open close
             $('.wf-accordion').on('hide.bs.collapse show.bs.collapse', function(e) {
+                console.log(e.target);
                 var type = e.type
                   , targetLength = e.target.childNodes.length
-                  , $span = targetLength > 3 ? $('#collapseZero span') : $(e.target).parent().find('a span')
+                  , $link = targetLength > 3 ? $('#collapseZero') : $(e.target).parent().find('h4 a')
+                  , $span = $link.find('span')
+                  , label = $link.text()
                   ;
-                type === 'hide' ? $span.removeClass().addClass('arrow-right') : $span.removeClass().addClass('arrow-down');
+                if(type === 'hide') {
+                     $span.removeClass().addClass('arrow-right').attr('aria-label', 'Contract' + label) ;
+                    $link.attr('aria-label', 'Contract' + label);
+                } else {
+                    $span.removeClass().addClass('arrow-down').attr('aria-label', 'Expand' + label) ;
+                     $link.attr('aria-label', 'Expand' + label);
+
+                }
             });
 
             $('.wf-accordion').on('shown.bs.collapse', function(e) {
                 var initY = $(e.target).offset().top
                     //168 reprepresents the offset from padding at the top of the page and the element
-                  , adjustedY = initY - 168
-                  ;
+                  , adjustedY = initY - 168;
                 window.scrollTo (0, adjustedY);
             });
 
@@ -107,15 +118,14 @@ WF.EFS = (function() {
             });
 
             $('.state-pick').on('change', function() {
-                var filterVal = this.value;
-                allStates = allStates || getStates('scripts/states.js');
-                var thisState = stateFilter(allStates, filterVal);
+                var filterVal = this.value
+                  , thisState = stateFilter(allStates, filterVal);
                 filteredSchools = getSchools(thisState);
-                $('.filter').show();
+                $('.school-pick-cont').removeAttr('aria-hidden');
                 $('.school-pick').empty().append(filteredSchools.join(''));
             });
 
-            $('.filter').on('click', 'a', function(e) {
+            $('.filter').on('click', 'button', function(e) {
                 var $schoolPick = $('.school-pick')
                   , filterVal = e.currentTarget.innerHTML
                   , defaultMarkup = '<option>No schools available.</option>'
