@@ -68,6 +68,9 @@ WF.EFS = (function() {
             , success: function(data) {
                 stateData = data;
               }
+            , error: function(xhr, status, error) {
+                console.log(status + ' ' + error);
+              }
             }
         );
         return stateData;
