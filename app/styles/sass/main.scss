@@ -138,8 +138,8 @@ button.btn-wells, a.btn-wells{
     background: #ec1f2c; /* Old browsers */
     @include filter-gradient(#ec1f2c, #ae1f25, vertical); // IE6-9
     @include background-image( url(../images/wf-logo.svg), linear-gradient(top,  #ec1f2c 43%,#ae1f25 99%) );
-    background-position: center top 60%, bottom left;
-    background-size: auto 27%, 100% auto;
+    background-position: center top 50%, bottom left;
+    background-size: auto 25%, 100% auto;
     background-repeat: no-repeat, no-repeat;
     text-align:center;
     position:fixed;
