@@ -13,7 +13,6 @@
     animation: $name $time;
 }
 
-
 /*Colors*/
 $lt-grey: #ccc;
 $drk-grey: #333;
@@ -66,6 +65,7 @@ button.btn-wells, a.btn-wells{
         color:#fff;
     }
 }
+
 .search-button {
     border:1px solid $lt-grey;
     float:left; 
@@ -205,7 +205,6 @@ button.btn-wells, a.btn-wells{
     }
 }
 
-
 .arrow-down, .arrow-right {
     width: 0; 
     height: 0; 
@@ -273,7 +272,6 @@ button.btn-wells, a.btn-wells{
         list-style:none;
         float:left;
         padding:0;
-
     }
 
     li {
@@ -285,6 +283,7 @@ button.btn-wells, a.btn-wells{
         content:"|";
         padding:0 5px 0 0;
     }
+
     li:last-child:after {
         content:"";
     }
@@ -297,12 +296,15 @@ button.btn-wells, a.btn-wells{
 .caption {
     padding-top:10px;
 }
+
 .wf sup {
     font-size:60%;
 }
+
 div[aria-hidden], select[aria-hidden]{
     display:none;
 }
+
 .visuallyhidden { 
   position: absolute; 
   overflow: hidden; 
@@ -310,6 +312,7 @@ div[aria-hidden], select[aria-hidden]{
   height: 1px; width: 1px; 
   margin: -1px; padding: 0; border: 0; 
 }
+
 /* animation stuff */
 
 .hide{
