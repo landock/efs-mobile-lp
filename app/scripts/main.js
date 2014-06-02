@@ -100,11 +100,11 @@ WF.EFS = (function() {
                   , label = $link.text()
                   ;
                 if(type === 'hide') {
-                     $span.removeClass().addClass('arrow-right').attr('aria-label', 'Contract' + label) ;
-                    $link.attr('aria-label', 'Contract' + label);
+                     $span.removeClass().addClass('arrow-right').attr('aria-label', 'Expand' + label) ;
+                    $link.attr('aria-label', 'Expand' + label);
                 } else {
-                    $span.removeClass().addClass('arrow-down').attr('aria-label', 'Expand' + label) ;
-                     $link.attr('aria-label', 'Expand' + label);
+                    $span.removeClass().addClass('arrow-down').attr('aria-label', 'Contract' + label) ;
+                     $link.attr('aria-label', 'Contract' + label);
 
                 }
             });
