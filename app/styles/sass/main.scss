@@ -46,9 +46,14 @@ body {
     }
 }
 
-.wf a, .wf .btn-link {
-    color:#245682;
+.wf a  {
+    text-decoration:underline;
 }
+
+.wf a, .wf .btn-link {
+    color:#1d4467;
+}
+
 .search-content *{
     background-color:#eae8e2;
     h1 {
@@ -63,6 +68,8 @@ body {
 
 button.btn-wells, a.btn-wells{
     background-color: #ce4c00; // Old browsers
+    font-weight:bold;
+    text-decoration:none;
     @include filter-gradient(#ce4c00, #a53e01, vertical); // IE6-9
     @include background-image(linear-gradient(top,  #ce4c00 1%,#ce4c00 43%,#a53e01 66%,#a53e01 100%));
     color:#fff;
@@ -105,7 +112,31 @@ button.btn-wells, a.btn-wells{
     }
 
     .panel-body{
-        padding-top:0px;
+        padding:0px;
+
+        .search-button {
+            width:104%;
+            @include border-radius(0);
+            font-weight:bold;
+            margin:10px -2%;
+            padding:20px 0;
+            text-align:center;
+            border:none;
+            border-bottom:3px groove rgba(255,255,255,0.7);
+        }
+
+        .get-started {
+            text-align:center;
+            margin-top:20px;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom:1px solid $lt-grey;
+            & a {
+                font-size:120%;
+                text-decoration:none;
+                font-weight:bold;
+            }
+        }
     }
 
     .panel-default .panel-heading{
@@ -123,6 +154,7 @@ button.btn-wells, a.btn-wells{
             height:100%;
             font-size:90%;
             font-weight:bold;
+            text-decoration:none;
 
             &:hover {
                 text-decoration:none;
@@ -263,6 +295,11 @@ button.btn-wells, a.btn-wells{
     .get-started {
         margin-bottom:20px;
         padding-top:10px;
+        & a {
+            text-decoration:none;
+            font-size:120%;
+            font-weight:bold;
+        }
     }
 }
 
