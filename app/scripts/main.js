@@ -117,7 +117,25 @@ WF.EFS = (function() {
             });
 
             $('.more-legal').click(function() {
-                $(this).find('span').toggleClass('arrow-down').toggleClass('arrow-right');
+                var $this = $(this)
+                  , label = $this.attr('aria-label')
+                  ;
+
+                if (label === 'Expand Footnotes') {
+                    $this
+                      .find('span')
+                      .toggleClass('arrow-down')
+                      .toggleClass('arrow-right')
+                    ;
+                    $this.attr('aria-label', 'Contract Footnotes');
+                } else {
+                    $this
+                      .find('span')
+                      .toggleClass('arrow-down')
+                      .toggleClass('arrow-right')
+                    ;
+                    $this.attr('aria-label', 'Expand Footnotes');
+                }
             });
 
             $('.state-pick').on('change', function() {

@@ -29,7 +29,9 @@ body {
     color: $drk-grey;
     padding-bottom:70px;
     padding-top:140px;
-    min-height:568px
+    min-height:568px;
+    overflow-x:hidden;
+    overflow-y:scroll;
 }
 
 .wf .container {
@@ -44,6 +46,9 @@ body {
     }
 }
 
+.wf a, .wf .btn-link {
+    color:#245682;
+}
 .search-content *{
     background-color:#eae8e2;
     h1 {
