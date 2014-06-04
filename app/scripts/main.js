@@ -40,22 +40,22 @@ WF.EFS = (function() {
 
     function getSchools(states) {
         var filteredValues = ['','','']
-          , aH = /^[A-H]+/g
-          , iP = /^[I-P]+/g
-          , qZ = /^[Q-Z]+/g
+          , aH = /^[A-H]/g
+          , iP = /^[I-P]/g
+          , qZ = /^[Q-Z]/g
           , filterRegexes = [aH,iP,qZ]
           ;
 
         for(var i = 0; i < states.length; i++) {
             for( var j = 0; j < filterRegexes.length; j++) {
-                var isThis = filterRegexes[j].test(states[i].schoolName);
-                if( isThis ) {
+                var isThis = states[i].schoolName.search(filterRegexes[j]);
+                if( isThis !== -1 ) {
                     var schoolName = states[i].schoolName;
                     filteredValues[j] += '<option>' + schoolName + '</option>';
                 }
             }
         }
-        return filteredValues;
+        return filteredValues;uuu
     }
 
     function getStates(stateUrl) {
@@ -69,7 +69,7 @@ WF.EFS = (function() {
                 stateData = data;
               }
             , error: function(xhr, status, error) {
-                console.log(status + ' ' + error);
+                throw('Status: ' + status + '; Error: ' + error + ';');
               }
             }
         );
@@ -92,7 +92,6 @@ WF.EFS = (function() {
 
             //Accordion open close
             $('.wf-accordion').on('hide.bs.collapse show.bs.collapse', function(e) {
-                console.log(e.target);
                 var type = e.type
                   , targetLength = e.target.childNodes.length
                   , $link = targetLength > 3 ? $('#collapseZero') : $(e.target).parent().find('h4 a')
@@ -146,31 +145,53 @@ WF.EFS = (function() {
                 $('.school-pick').empty().append(filteredSchools.join(''));
             });
 
+            //TODO: The search term needs to be a data-attribute instaed of teh innerText of the node
             $('.filter').on('click', 'button', function(e) {
                 var $schoolPick = $('.school-pick')
-                  , filterVal = e.currentTarget.innerHTML
+                  , filterVal = $(e.currentTarget)
+                                  .attr('class')
+                                  .split(' ')[0]
                   , defaultMarkup = '<option>No schools available.</option>'
                   , appendInputs = function($target, markup) {
                         $target.empty();
-                        markup !== '' ? $target.append(markup) : $target.append(defaultMarkup) ;
-                        $target.find('option:first').prop('selected',true).prop('selected', false);
+                        markup !== ''
+                          ? $target.append(markup)
+                          : $target.append(defaultMarkup)
+                        ;
+                        $target
+                          .find('option:first')
+                          .prop('selected',true)
+                          .prop('selected', false)
+                        ;
                     }
                   ;
 
+                  console.log(e);
+                  console.log(filterVal);
                 switch(filterVal) {
-                    case 'All':
+                    case 'all':
                         appendInputs($schoolPick, filteredSchools.join(''));
                     break;
-                    case 'A-H':
+                    case 'ah':
                         appendInputs($schoolPick, filteredSchools[0]);
                     break;
-                    case 'I-P':
+                    case 'ip':
                         appendInputs($schoolPick, filteredSchools[1]);
                     break;
-                    case 'Q-Z':
+                    case 'qz':
                         appendInputs($schoolPick, filteredSchools[2]);
                     break;
                 }
+            });
+
+            $('body').on('click', '[data-tag]', function(e) {
+                console.log(e.target);
+
+                var $this = $(this)
+                  , tag = $this.attr('data-tag')
+                  , url = 'http://adfarm.mediaplex.com/ad/bk/7116-59391-3840-0?' + tag + '=1&mpuid='
+                  ;
+                $('body').prepend('<img src="' + url + '" height="1" width="1" alt="Mediaplex_tag" />');
             });
         }
     };
