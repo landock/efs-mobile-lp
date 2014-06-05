@@ -174,7 +174,7 @@ button.btn-wells, a.btn-wells{
     background: #ec1f2c; /* Old browsers */
     @include filter-gradient(#ec1f2c, #ae1f25, vertical); // IE6-9
     @include background-image( url(../images/wf-logo.svg), linear-gradient(top,  #ec1f2c 43%,#ae1f25 99%) );
-    background-position: center top 50%, bottom left;
+    background-position: center 50%, bottom left;
     background-size: auto 25%, 100% auto;
     background-repeat: no-repeat, no-repeat;
     text-align:center;
@@ -191,7 +191,8 @@ button.btn-wells, a.btn-wells{
     margin-bottom:10px;
     height:80px;
     max-height:80px;
-    background: url(../images/mast2.jpg)top right/ cover no-repeat;
+    background: url(../images/mast2.jpg) top right no-repeat;
+    background-size: cover;
     position:fixed;
     top:50px;
     left:0;
