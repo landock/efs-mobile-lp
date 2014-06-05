@@ -166,8 +166,6 @@ WF.EFS = (function() {
                     }
                   ;
 
-                  console.log(e);
-                  console.log(filterVal);
                 switch(filterVal) {
                     case 'all':
                         appendInputs($schoolPick, filteredSchools.join(''));
@@ -185,7 +183,6 @@ WF.EFS = (function() {
             });
 
             $('body').on('click', '[data-tag]', function(e) {
-                console.log(e.target);
 
                 var $this = $(this)
                   , tag = $this.attr('data-tag')
