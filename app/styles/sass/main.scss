@@ -82,6 +82,9 @@ button.btn-wells, a.btn-wells{
     }
 }
 
+.search-btn-cont{
+    text-align: right;
+}
 .search-button {
     border:1px solid $lt-grey;
     float:left; 
@@ -93,9 +96,8 @@ button.btn-wells, a.btn-wells{
 
     p {padding:10px 0 0 10px;}
 
-    button { margin-top:15px }
+    button { margin-top:5px }
 }
-
 .learn-more{
     border-top:1px solid $lt-grey;
     @include box-shadow(#ccc 0px 4px 10px -4px inset)
@@ -198,7 +200,7 @@ button.btn-wells, a.btn-wells{
     margin-bottom:10px;
     height:80px;
     max-height:80px;
-    background: url(../images/mast2.jpg) top right no-repeat;
+    background: url(../images/mast2.jpg) 100% 25% no-repeat;
     background-size: cover;
     position:fixed;
     top:50px;
@@ -367,7 +369,6 @@ div[aria-hidden], select[aria-hidden]{
 /* animation stuff */
 
 .hide{
-    display:none;
 }
 
 .contract { 
