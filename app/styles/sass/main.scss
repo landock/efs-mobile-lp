@@ -70,8 +70,12 @@ button.btn-wells, a.btn-wells{
     background-color: #ce4c00; // Old browsers
     font-weight:bold;
     text-decoration:none;
-    @include filter-gradient(#ce4c00, #a53e01, vertical); // IE6-9
-    @include background-image(linear-gradient(top,  #ce4c00 1%,#ce4c00 43%,#a53e01 66%,#a53e01 100%));
+    background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(1%,#ce4c00),color-stop(43%,#ce4c00),color-stop(66%,#a53e01),color-stop(100%,#a53e01));
+    background-image: -webkit-linear-gradient(top,#ce4c00 1%,#ce4c00 43%,#a53e01 66%,#a53e01 100%);
+    background-image: -moz-linear-gradient(top,#ce4c00 1%,#ce4c00 43%,#a53e01 66%,#a53e01 100%);
+    background-image: -ms-linear-gradient(top,#ce4c00 1%,#ce4c00 43%,#a53e01 66%,#a53e01 100%);
+    background-image: -o-linear-gradient(top,#ce4c00 1%,#ce4c00 43%,#a53e01 66%,#a53e01 100%);
+    background-image: linear-gradient(top,#ce4c00 1%,#ce4c00 43%,#a53e01 66%,#a53e01 100%);
     color:#fff;
     &:hover {
         color:#fff;
@@ -171,9 +175,12 @@ button.btn-wells, a.btn-wells{
 }
 
 .wf-logo{
-    background: #ec1f2c; /* Old browsers */
-    @include filter-gradient(#ec1f2c, #ae1f25, vertical); // IE6-9
-    @include background-image( url(../images/wf-logo.svg), linear-gradient(top,  #ec1f2c 43%,#ae1f25 99%) );
+    background-image: url(../images/wf-logo.svg), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(43%, #ec1f2c), color-stop(99%, #ae1f25));
+    background-image: url(../images/wf-logo.svg), -webkit-linear-gradient(top, #ec1f2c 43%, #ae1f25 99%);
+    background-image: url(../images/wf-logo.svg), -moz-linear-gradient(top, #ec1f2c 43%, #ae1f25 99%);
+    background-image: url(../images/wf-logo.svg), -ms-linear-gradient(top, #ec1f2c 43%, #ae1f25 99%);
+    background-image: url(../images/wf-logo.svg), -o-linear-gradient(top, #ec1f2c 43%, #ae1f25 99%);
+    background-image: url(../images/wf-logo.svg), linear-gradient(top, #ec1f2c 43%, #ae1f25 99%);
     background-position: center 50%, bottom left;
     background-size: auto 25%, 100% auto;
     background-repeat: no-repeat, no-repeat;
