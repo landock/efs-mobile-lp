@@ -1,4 +1,4 @@
-//Polyfill for filter
+//Polyfill for array.filter()
 if(!Array.prototype.filter){Array.prototype.filter=function(e){"use strict";if(this===void 0||this===null)throw new TypeError;var t=Object(this);var n=t.length>>>0;if(typeof e!=="function")throw new TypeError;var r=[];var i=arguments.length>=2?arguments[1]:void 0;for(var s=0;s<n;s++){if(s in t){var o=t[s];if(e.call(i,o,s,t))r.push(o)}}return r}}
 
 var WF = WF || {};
@@ -108,6 +108,7 @@ WF.EFS = (function() {
                 }
             });
 
+            //scroll to top of panel
             $('.wf-accordion').on('shown.bs.collapse', function(e) {
                 var initY = $(e.target).offset().top
                     //168 reprepresents the offset from padding at the top of the page and the element
@@ -115,6 +116,7 @@ WF.EFS = (function() {
                 window.scrollTo (0, adjustedY);
             });
 
+            //Footnotes toggle
             $('.more-legal').click(function() {
                 var $this = $(this)
                   , label = $this.attr('aria-label')
@@ -145,7 +147,7 @@ WF.EFS = (function() {
                 $('.school-pick').empty().append(filteredSchools.join(''));
             });
 
-            //TODO: The search term needs to be a data-attribute instaed of teh innerText of the node
+            //school filter
             $('.filter').on('click', 'button', function(e) {
                 var $schoolPick = $('.school-pick')
                   , filterVal = $(e.currentTarget)
@@ -183,7 +185,6 @@ WF.EFS = (function() {
             });
 
             $('body').on('click', '[data-tag]', function(e) {
-
                 var $this = $(this)
                   , tag = $this.attr('data-tag')
                   , url = 'http://adfarm.mediaplex.com/ad/bk/7116-59391-3840-0?' + tag + '=1&mpuid='
