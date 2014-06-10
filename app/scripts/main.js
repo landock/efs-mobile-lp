@@ -196,8 +196,5 @@ WF.EFS = (function() {
 })();
 
 $(function() {
-    $('body').on('animationend webkitAnimationEnd mozAnimationEnd', function() {
-        window.scrollTo(0, 0);
-    });
     WF.EFS.init();
 });
