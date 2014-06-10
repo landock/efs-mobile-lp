@@ -55,7 +55,7 @@ WF.EFS = (function() {
                 }
             }
         }
-        return filteredValues;uuu
+        return filteredValues;
     }
 
     function getStates(stateUrl) {
@@ -82,11 +82,11 @@ WF.EFS = (function() {
             allStates = allStates || getStates('scripts/states.js');
 
             //toggle slide transitions
-            $('.btn-wells').on('click', function(e) {
+            $('.btn-wells').on('click touchend', function(e) {
                 expand(e);
             });
 
-            $('.btn-link').on('click', function(e) {
+            $('.btn-link').on('click touchend', function(e) {
                 contract(e);
             });
 
@@ -104,7 +104,6 @@ WF.EFS = (function() {
                 } else {
                     $span.removeClass().addClass('arrow-down').attr('aria-label', 'Contract' + label) ;
                      $link.attr('aria-label', 'Contract' + label);
-
                 }
             });
 
@@ -112,15 +111,14 @@ WF.EFS = (function() {
             $('.wf-accordion').on('shown.bs.collapse', function(e) {
                 var $target = $(e.target)
                   , initY = $target.offset().top
-                    //168 reprepresents the offset from padding at the top of the page and the element
-                  , adjustedY = initY - 168
-                  , targetId = $target.attr('id');
-              console.log(targetId);
+                  , adjustedY = initY - 168 //168 reprepresents the offset from padding at the top of the page and the element
+                  , targetId = $target.attr('id')
+                  ;
 
-            if (targetId === 'accordion') {
-                $('#accordion').scrollTop(0, 0) ;
-            } else {
-                }window.scrollTo (0, adjustedY);
+            targetId === 'accordion'
+                ? $('#accordion').scrollTop(0, 0)
+                : window.scrollTo (0, adjustedY)
+                ;
             });
 
             //Footnotes toggle
@@ -146,6 +144,7 @@ WF.EFS = (function() {
                 }
             });
 
+            //add the filtered schools to the list
             $('.state-pick').on('change', function() {
                 var filterVal = this.value
                   , thisState = stateFilter(allStates, filterVal);
@@ -155,7 +154,7 @@ WF.EFS = (function() {
             });
 
             //school filter
-            $('.filter').on('click', 'button', function(e) {
+            $('.filter').on('click touchend', 'button', function(e) {
                 var $schoolPick = $('.school-pick')
                   , filterVal = $(e.currentTarget)
                                   .attr('class')
@@ -191,12 +190,18 @@ WF.EFS = (function() {
                 }
             });
 
-            $('body').on('click', '[data-tag]', function(e) {
+            //this adds the roi pixel to each of the mapped locations using a data-tag attribute
+            $('[data-tag]').one('click', function() {
                 var $this = $(this)
                   , tag = $this.attr('data-tag')
                   , url = 'http://adfarm.mediaplex.com/ad/bk/7116-59391-3840-0?' + tag + '=1&mpuid='
                   ;
                 $('body').prepend('<img src="' + url + '" height="1" width="1" alt="Mediaplex_tag" />');
+            });
+
+            //we want to make sure we're at the top of the page
+            $('body').on('animationend webkitAnimationEnd mozAnimationEnd', function() {
+                window.scrollTo(0, 0);
             });
         }
     };
