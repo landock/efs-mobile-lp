@@ -110,10 +110,17 @@ WF.EFS = (function() {
 
             //scroll to top of panel
             $('.wf-accordion').on('shown.bs.collapse', function(e) {
-                var initY = $(e.target).offset().top
+                var $target = $(e.target)
+                  , initY = $target.offset().top
                     //168 reprepresents the offset from padding at the top of the page and the element
-                  , adjustedY = initY - 168;
-                window.scrollTo (0, adjustedY);
+                  , adjustedY = initY - 168
+                  , targetId = $target.attr('id');
+              console.log(targetId);
+
+            if (targetId === 'accordion') {
+                $('#accordion').scrollTop(0, 0) ;
+            } else {
+                }window.scrollTo (0, adjustedY);
             });
 
             //Footnotes toggle
