@@ -94,7 +94,7 @@ button.btn-wells, a.btn-wells{
     font-weight:bold;
     margin:10px 0;
 
-    p {padding:10px 0 0 10px;}
+    p {padding:10px 0 0 0;}
 
     button { margin-top:5px }
 }
@@ -364,10 +364,11 @@ div[aria-hidden], select[aria-hidden]{
   border: 0; 
 }
 
+#lawstuff div>p:last-child {
+   letter-spacing:0.2px; 
+}
 /* animation stuff */
 
-.hide{
-}
 
 .contract { 
     display:block;
